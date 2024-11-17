@@ -70,14 +70,14 @@
       <h2>Trailer</h2>
       <video controls>
         <source src="./Through_Their_Eyes_Trailer.mp4" type="video/mp4">
-        Seu navegador não suporta a reprodução de vídeos. <a href="" target="_blank">Clique aqui para assistir</a>.
+        Seu navegador não suporta a reprodução de vídeos. <a href="" target="_blank">Clique aqui para assistir</a>.<br>
       </video>
     </section>
 
     <section id="contato">
       <h2>Contato</h2>
       <p>Preencha o formulário abaixo para entrar em contato conosco:</p>
-      <form id="contact-form">
+      <form id="contact-form" onsubmit="sendEmail(event)">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required><br>
       
@@ -105,39 +105,37 @@
   </footer>
 
   <!-- Carregue o script mais recente do EmailJS -->
-  <script type="module">
-    import emailjs from 'https://cdn.emailjs.com/dist/email.min.js';
-    
-    window.onload = function() {
-      // Inicialize o EmailJS com a sua chave pública
-      emailjs.init("mJPRN_jT5NbWba77f"); // Substitua pela sua chave pública (user_id)
-
-      // Quando o formulário for enviado, envie o e-mail
-      document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Impede o comportamento padrão do formulário
-
-        // Pegue os valores dos campos do formulário
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var message = document.getElementById("message").value;
-
-        // Envie os dados para o EmailJS, passando os valores dos campos como um objeto
-        emailjs.send("service_0jgld2j", "template_wjruwbc", {
-          name: name,
-          email: email,
-          message: message
-        })
-        .then(function(response) {
-          alert("E-mail enviado com sucesso!");
-        }, function(error) {
-          alert("Erro ao enviar o e-mail. Tente novamente.");
-          console.error("Erro ao enviar e-mail:", error);
-        });
-      });
-    };
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function(){
+        emailjs.init("mJPRN_jT5NbWba77f");  // Substitua pelo seu publicKey (user_id)
+     })();
   </script>
 
+  <script>
+    function sendEmail(event) {
+      event.preventDefault(); // Previne o comportamento padrão do formulário
 
-<script src="script.js"></script>
+      // Obtenha os valores dos campos
+      const formData = new FormData(event.target);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+      };
+
+      // Enviar o e-mail usando o EmailJS
+      emailjs.send("service_0jgld2j", "template_wjruwbc", data)
+        .then(function(response) {
+          console.log('E-mail enviado com sucesso!', response);
+          alert("Mensagem enviada com sucesso!");
+        }, function(error) {
+          console.error('Erro ao enviar e-mail:', error);
+          alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
+        });
+    }
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
