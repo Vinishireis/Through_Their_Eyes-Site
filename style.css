@@ -204,22 +204,22 @@ p {
   line-height: 1.6;
 }
 
-/* Estilo da seção Sinopse */
+/* Estilos gerais para a seção */
 #sinopse {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 40px 30px;
   margin: 40px auto;
   max-width: 1200px;
+  text-align: center; /* Centraliza o conteúdo da seção */
 }
 
 #sinopse h2 {
   font-size: 2.5rem;
   color: #4CAF50;
-  text-align: center;
-  margin-bottom: 20px;
   text-transform: uppercase;
+  margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
@@ -228,12 +228,14 @@ p {
   color: #666;
   line-height: 1.6;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: justify; /* Alinha o texto nas margens */
+  text-justify: inter-word; /* Melhora o espaçamento entre palavras */
 }
 
+/* Lista de itens dentro da sinopse */
 .sinopse-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajusta a quantidade de colunas automaticamente */
   gap: 20px;
   margin-bottom: 30px;
 }
@@ -243,43 +245,35 @@ p {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sinopse-item h3 {
   font-size: 1.4rem;
   color: #4CAF50;
   margin-bottom: 10px;
-}
-
-.sinopse-item p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
-  margin-bottom: 10px;
+  text-align: left; /* Alinha os subtítulos à esquerda dentro de cada item */
 }
 
 .highlight {
   font-weight: bold;
-  color: #388E3C;
+  color: #4CAF50;
 }
 
+/* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
+  #sinopse {
+    padding: 30px 20px;
+  }
+
+  .sinopse-item {
+    padding: 15px;
+  }
+
   .sinopse-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  #sinopse h2 {
-    font-size: 2rem;
-  }
-
-  #sinopse p {
-    font-size: 1rem;
-  }
-
-  .sinopse-item h3 {
-    font-size: 1.2rem;
+    grid-template-columns: 1fr; /* Em dispositivos menores, os itens ocupam a tela inteira */
   }
 }
 
