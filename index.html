@@ -66,7 +66,6 @@
       </p>
     </section>
     
-
     <section id="trailer">
       <h2>Trailer</h2>
       <video controls>
@@ -77,13 +76,17 @@
 
     <section id="contato">
       <h2>Contato</h2>
-      <form action="https://getform.io/f/azyynkjb" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="Nome" placeholder="Seu nome" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="Email" placeholder="seuemail@exemplo.com" required>
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="Mensagem" placeholder="Escreva sua mensagem aqui" required></textarea>
+      <p>Preencha o formulário abaixo para entrar em contato conosco:</p>
+      <form id="contact-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required><br>
+      
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br>
+      
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea><br>
+      
         <button type="submit">Enviar</button>
       </form>
     </section>
@@ -101,6 +104,40 @@
     </ul>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Carregue o script mais recente do EmailJS -->
+  <script type="module">
+    import emailjs from 'https://cdn.emailjs.com/dist/email.min.js';
+    
+    window.onload = function() {
+      // Inicialize o EmailJS com a sua chave pública
+      emailjs.init("mJPRN_jT5NbWba77f"); // Substitua pela sua chave pública (user_id)
+
+      // Quando o formulário for enviado, envie o e-mail
+      document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Impede o comportamento padrão do formulário
+
+        // Pegue os valores dos campos do formulário
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        // Envie os dados para o EmailJS, passando os valores dos campos como um objeto
+        emailjs.send("service_0jgld2j", "template_wjruwbc", {
+          name: name,
+          email: email,
+          message: message
+        })
+        .then(function(response) {
+          alert("E-mail enviado com sucesso!");
+        }, function(error) {
+          alert("Erro ao enviar o e-mail. Tente novamente.");
+          console.error("Erro ao enviar e-mail:", error);
+        });
+      });
+    };
+  </script>
+
+
+<script src="script.js"></script>
 </body>
 </html>
