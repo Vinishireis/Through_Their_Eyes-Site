@@ -52,23 +52,33 @@
     <section id="trailer">
       <h2>Trailer</h2>
       <video controls>
-        <source src="" type="video/mp4">
-        Seu navegador não suporta a reprodução de vídeos. <a href="trailer.mp4" target="_blank">Clique aqui para assistir</a>.
+        <source src="./Through_Their_Eyes_Trailer.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução de vídeos. <a href="" target="_blank">Clique aqui para assistir</a>.
       </video>
     </section>
 
     <!-- Seção: Contato -->
-    <form id="contatoForm">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-      
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-      
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui" required></textarea>
+     <section id="contato">
+      <h2>Entre em Contato</h2>
+      <form action="https://formspree.io/f/xqaklkwb" method="POST">
+        <label>
+          Seu nome:
+          <input type="text" name="nome" placeholder="Seu nome" required>
+        </label>
+        
+        <label>
+          Seu email:
+          <input type="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </label>
+        
+        <label>
+          Sua mensagem:
+          <textarea name="message" placeholder="Escreva sua mensagem aqui" required></textarea>
+        </label>
+        
         <button type="submit">Enviar</button>
-    </form>
+      </form>
+    </section>
       
   </main>
 
@@ -86,45 +96,6 @@
 
   <!-- Scripts EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<script>
-  // Inicializando o EmailJS com sua chave pública
-  (function() {
-    emailjs.init('aYpTVMe0OhaNJtgTy'); // Substitua pela sua chave pública
-  })();
-
-  // Obtendo o formulário
-  const contatoForm = document.getElementById('contatoForm');
-
-  // Quando o formulário for enviado
-  contatoForm.addEventListener('submit', function(e) {
-    e.preventDefault();  // Evita o envio padrão do formulário
-
-    // Coletando os dados do formulário
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const mensagem = document.getElementById('mensagem').value;
-
-    // Parâmetros do email que serão enviados
-    const params = {
-      nome: nome,
-      email: email,
-      mensagem: mensagem
-    };
-
-    // Enviando o email através do EmailJS
-    emailjs.send('service_ce17u7p', 'template_wjruwbc', params)
-      .then(function(response) {
-        // Exibe a mensagem de sucesso e limpa o formulário
-        alert('Mensagem enviada com sucesso!');
-        contatoForm.reset();
-      }, function(error) {
-        // Exibe mensagem de erro no console e no navegador
-        alert('Erro ao enviar a mensagem. Tente novamente.');
-        console.error('Erro ao enviar a mensagem:', error);
-      });
-  });
-</script>
 
 </body>
 </html>
