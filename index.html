@@ -6,7 +6,10 @@
   <meta name="description" content="Through Their Eyes - Um jogo que promove empatia e conscientização social por meio de experiências interativas.">
   <meta name="author" content="Equipe Through Their Eyes">
   <meta name="keywords" content="jogo, empatia, conscientização, gameplay, trailer">
-
+  <meta property="og:title" content="Through Their Eyes">
+  <meta property="og:description" content="Jogo que promove empatia e conscientização social.">
+  <meta property="og:image" content="https://www.example.com/image.jpg">
+  <meta property="og:url" content="https://www.example.com">
 
   <title>Through Their Eyes</title>
   <link rel="stylesheet" href="style.css">
@@ -14,25 +17,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header>
+    <nav>
+      <div class="menu-burger" id="menuToggle" aria-label="Abrir menu">
+        <div class="burger-bar"></div>
+        <div class="burger-bar"></div>
+        <div class="burger-bar"></div>
+      </div>
+      <ul class="menu-list" id="menuList" role="navigation">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#trailer">Trailer</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="https://github.com/2024-2-MCC1/Projeto4">Link do Projeto</a></li>
+      </ul>
+    </nav>
     <h1>Through Their Eyes</h1>
-    <p>Explore um mundo de empatia e conscientização social.</p>
   </header>
 
-  <!-- Navegação -->
-  <nav>
-    <ul>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#trailer">Trailer</a></li>
-      <li><a href="#contato">Contato</a></li>
-      <li><a href="https://github.com/2024-2-MCC1/Projeto4">Link do Projeto</a></li>
-    </ul>
-  </nav>
-
-  <!-- Conteúdo principal -->
   <main>
-    <!-- Seção: Sobre o Jogo -->
     <section id="sobre">
       <h2>Sobre o Jogo</h2>
       <p>"Through Their Eyes" é um jogo criado para promover empatia ao explorar as experiências de pessoas de diferentes realidades sociais.</p>
@@ -41,14 +43,30 @@
     </section>
 
     <section id="sinopse">
-        <h2>Sinopse</h2>
-        <p>Em um mundo vasto e dinâmico, onde o céu é o limite, você assume o controle de um pássaro corajoso em uma jornada de corrida infinita através de paisagens etéreas, repletas de nuvens flutuantes e horizontes deslumbrantes. Desafie os seus reflexos e velocidade enquanto navega por um mundo aberto, cheio de obstáculos imprevisíveis, em busca de novas descobertas.</p>
-        <p>Com um sistema de movimento intuitivo e um ritmo acelerado, "Dash Horizon" oferece uma experiência emocionante e viciante. Cada voo será uma batalha contra o tempo e contra a gravidade, com você ajustando a direção e a velocidade do pássaro para evitar colidir com nuvens e objetos que surgem no caminho.</p>
-        <p>Prepare-se para testar seus limites e tentar bater sua própria pontuação, enquanto o horizonte à sua frente nunca deixa de se expandir. Quanto mais longe você chegar, mais desafios e surpresas o aguardam. Sinta o vento no rosto e as cores vibrantes do céu em "Dash Horizon", onde a aventura nunca termina.</p>
-      </section>
-  
+      <h2>Sinopse</h2>
+      <p>
+        <strong>Through Their Eyes</strong> é um jogo imersivo de aventura que coloca o jogador na perspectiva de personagens de diferentes origens sociais, convidando-o a experimentar e entender os desafios enfrentados por indivíduos marginalizados.
+      </p>
+      <div class="sinopse-list">
+        <div class="sinopse-item">
+          <h3><span class="highlight">Cotidiano:</span></h3>
+          <p>Explore os obstáculos diários enfrentados por aqueles que vivem à margem da sociedade, desafiando suas habilidades de adaptação e sobrevivência.</p>
+        </div>
+        <div class="sinopse-item">
+          <h3><span class="highlight">Sonhos/Pensamentos:</span></h3>
+          <p>Mergulhe nos sonhos e pensamentos mais profundos dos personagens, refletindo sobre suas aspirações, medos e a realidade que os limita.</p>
+        </div>
+        <div class="sinopse-item">
+          <h3><span class="highlight">Desfecho:</span></h3>
+          <p>Enfrente a dura realidade das escolhas feitas e veja as consequências dessas decisões, com múltiplos caminhos e finais possíveis.</p>
+        </div>
+      </div>
+      <p>
+        Ao longo da jornada, o jogador será desafiado a tomar decisões difíceis, refletindo sobre questões sociais profundas e buscando empatia por aqueles cujas histórias raramente são contadas.
+      </p>
+    </section>
+    
 
-    <!-- Seção: Trailer -->
     <section id="trailer">
       <h2>Trailer</h2>
       <video controls>
@@ -57,40 +75,32 @@
       </video>
     </section>
 
-   <!-- Seção: Contato -->
-<section id="contato">
-  <h2>Contato</h2>
-  <form action="https://getform.io/f/azyynkjb" method="POST">
-    <!-- Campo Nome -->
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="Nome" placeholder="Seu nome" required>
-    
-    <!-- Campo Email -->
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="Email" placeholder="seuemail@exemplo.com" required>
-    
-    <!-- Campo Mensagem -->
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="Mensagem" placeholder="Escreva sua mensagem aqui" required></textarea>
-    
-    <!-- Botão de Envio -->
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-    
+    <section id="contato">
+      <h2>Contato</h2>
+      <form action="https://getform.io/f/azyynkjb" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="Nome" placeholder="Seu nome" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="Email" placeholder="seuemail@exemplo.com" required>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="Mensagem" placeholder="Escreva sua mensagem aqui" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
   </main>
 
-  <!-- Rodapé -->
   <footer>
     <p>&copy; 2024 Through Their Eyes. Todos os direitos reservados.</p>
-    <p>
-      Siga-nos: 
-      <a href="https://github.com/2024-2-MCC1/Projeto4" target="_blank">Github</a> | 
-    </p>
+    <ul>
+      <li><a href="https://github.com/2024-2-MCC1/Projeto4" target="_blank" title="Repositório no GitHub">
+        <img src="https://img.icons8.com/material-outlined/24/4caf50/github.png" alt="GitHub" aria-label="GitHub">
+      </a></li>
+      <li><a href="mailto:throughtheireyes167@gmail.com" title="Enviar email">
+        <img src="https://img.icons8.com/material-outlined/24/4caf50/email.png" alt="Email" aria-label="Email">
+      </a></li>
+    </ul>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
-
 </body>
 </html>
