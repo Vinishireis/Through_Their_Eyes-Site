@@ -1,26 +1,43 @@
-document.querySelector('form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('Obrigado por entrar em contato! Responderemos em breve.');
+// Menu responsivo
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", (e) => {
+      e.stopPropagation(); // Impede que o clique no hamburger feche o menu
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+  });
+
+  // Fechar menu ao clicar em um link
+  document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+      });
+  });
+
+  // Fechar menu ao clicar fora dele
+  document.addEventListener("click", (e) => {
+      if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+      }
+  });
 });
 
-// Animação do Menu
-const menuBurger = document.getElementById('menuToggle');
-const menuList = document.getElementById('menuList');
+// Voltar ao topo
+const backToTop = document.getElementById("back-to-top");
 
-// Abrir/fechar o menu quando o hambúrguer for clicado
-menuBurger.addEventListener('click', (e) => {
-  e.stopPropagation(); // Impede que o evento se propague para o documento
-  menuBurger.classList.toggle('open');
-  menuList.classList.toggle('show');
-});
-
-// Fechar o menu se o usuário clicar fora do menu
-document.addEventListener('click', (e) => {
-  // Verifica se o clique foi fora do menu e do hambúrguer
-  if (!menuBurger.contains(e.target) && !menuList.contains(e.target)) {
-      menuBurger.classList.remove('open');
-      menuList.classList.remove('show');
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 300) {
+      backToTop.classList.add("show");
+  } else {
+      backToTop.classList.remove("show");
   }
 });
 
-
+backToTop.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

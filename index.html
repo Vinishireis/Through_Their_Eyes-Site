@@ -8,8 +8,7 @@
   <meta name="keywords" content="jogo, empatia, conscientização, gameplay, trailer">
   <meta property="og:title" content="Through Their Eyes">
   <meta property="og:description" content="Jogo que promove empatia e conscientização social.">
-  <meta property="og:image" content="https://www.example.com/image.jpg">
-  <meta property="og:url" content="https://www.example.com">
+  <meta property="og:image" content="https://github.com/2024-2-MCC1/Projeto4/raw/main/Assets/Images_Game/Image_Game.jpg">
 
   <title>Through Their Eyes</title>
   <link rel="stylesheet" href="style.css">
@@ -17,30 +16,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header>
-    <nav>
-      <div class="menu-burger" id="menuToggle" aria-label="Abrir menu">
-        <div class="burger-bar"></div>
-        <div class="burger-bar"></div>
-        <div class="burger-bar"></div>
-      </div>
-      <ul class="menu-list" id="menuList" role="navigation">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#trailer">Trailer</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="https://github.com/2024-2-MCC1/Projeto4">Link do Projeto</a></li>
-      </ul>
-    </nav>
-    <h1>Through Their Eyes</h1>
-  </header>
+    <div class="navbar">
+        <a href="#" class="nav-logo">Through Their Eyes</a>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#sobre" class="nav-link">Início</a></li>
+            <li class="nav-item"><a href="#sinopse" class="nav-link">Sobre</a></li>
+            <li class="nav-item"><a href="#desenvolvedores" class="nav-link">Desenvolvedores</a></li>
+            <li class="nav-item"><a href="#trailer" class="nav-link">Trailer</a></li>
+            <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+            <li class="nav-item"><a href="https://github.com/2024-2-MCC1/Projeto4" class="nav-link">Projeto</a></li>
+        </ul>
+    </div>
+</header>
+
+<a href="#top" id="back-to-top" aria-label="Voltar ao topo">&uarr;</a>
 
   <main>
     <section id="sobre">
       <h2>Sobre o Jogo</h2>
       <p>"Through Their Eyes" é um jogo criado para promover empatia ao explorar as experiências de pessoas de diferentes realidades sociais.</p>
       <p>Prepare-se para uma jornada dividida em três partes: cotidiano, sonhos e desfecho. Cada escolha impactará o desenrolar da história.</p>
-      <p>Disponível para <strong>PC</strong>.</p>
+      <p>Disponível para <a href="https://github.com/2024-2-MCC1/Projeto4/releases/download/V1.0.0_PC/Through.Their.Eyes.exe" class="link-jogo"><strong>PC</strong></a>.</p>
     </section>
+  </main>
+  
 
     <section id="sinopse">
       <h2>Sinopse</h2>
@@ -65,11 +71,86 @@
         Ao longo da jornada, o jogador será desafiado a tomar decisões difíceis, refletindo sobre questões sociais profundas e buscando empatia por aqueles cujas histórias raramente são contadas.
       </p>
     </section>
+
+
+    <section id="desenvolvedores">
+      <h2>Conheça os Desenvolvedores</h2>
+      <div class="dev-container">
+        
+        <!--Higor Luiz Card-->
+        <div class="dev-card">
+          <img src="assets/Higor_Fonseca.jpg" alt="Foto do Desenvolvedor 1" class="dev-photo">
+          <a href="https://www.linkedin.com/in/higor-fonseca-santos?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+          <h3>Higor Luiz Fonseca dos Santos</h3>
+          <p>Designer de Gameplay</p>
+        </a>
+          <div class="social-links">
+            <a href="https://github.com/higor-f" target="_blank" title="GitHub">
+              <img src="https://img.icons8.com/material-outlined/24/4caf50/github.png" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/higor-fonseca-santos?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">
+              <img src="https://img.icons8.com/material-outlined/24/4caf50/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+          </div>
+        </div>
+        
+        <!--João Victor Card-->
+        <div class="dev-card">
+          <img src="assets/Joao_Victor.jpg" alt="Foto do Desenvolvedor 2" class="dev-photo">
+          <a href="">
+          <h3>João Victor de Faria Santana</h3>
+        </a>
+          <p>Desenvolvedor de gameplay</p>
+          <div class="social-links">
+            <a href="https://github.com/joaovictorfaria" target="_blank" title="GitHub">
+              <img src="https://img.icons8.com/material-outlined/24/4caf50/github.png" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/joaovictordefaria?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">
+              <img src="https://img.icons8.com/material-outlined/24/4caf50/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+          </div>
+        </div>
+
+        <!--Marcos Hiroshi Card-->
+        <div class="dev-card">
+          <img src="assets/Marcos_Hiroshi.jpg" alt="Foto do Desenvolvedor 3" class="dev-photo">
+          <a href="https://www.linkedin.com/in/marcos-hiroshi-033423339">
+            <h3>Marcos Hiroshi Yogi Carvalho</h3>
+          </a>
+          <p>Programador e Designer de Gameplay</p>
+          <div class="social-links">
+            <a href="https://github.com/Marcos-Yogi" target="_blank" title="GitHub">
+              <img src="https://img.icons8.com/material-outlined/24/4caf50/github.png" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/marcos-hiroshi-033423339" target="_blank" title="LinkedIn">
+              <img src="https://img.icons8.com/material-outlined/24/4caf50/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+          </div>
+        </div>
+
+        <!--Vinícius Nishimura ard-->
+        <div class="dev-card">
+          <img src="assets/Vinicius_Nishimura.jpg" alt="Foto do Desenvolvedor 4" class="dev-photo">
+          <a href="https://www.linkedin.com/in/vinícius-nishimura-reis/">
+            <h3>Vinícius Nishimura Reis</h3>
+          </a>
+          <p>Programador & Artista Animador</p>
+          <div class="social-links">
+            <a href="https://github.com/Vinishireis" target="_blank" title="GitHub">
+              <img src="https://img.icons8.com/material-outlined/24/4caf50/github.png" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/vinícius-nishimura-reis/" target="_blank" title="LinkedIn">
+              <img src="https://img.icons8.com/material-outlined/24/4caf50/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+          </div>
+        </div>
+        
+    </section>
     
     <section id="trailer">
       <h2>Trailer</h2>
       <video controls>
-        <source src="./Through_Their_Eyes_Trailer.mp4" type="video/mp4">
+        <source src="./assets/Through_Their_Eyes_Trailer.mp4" type="video/mp4">
         Seu navegador não suporta a reprodução de vídeos. <a href="" target="_blank">Clique aqui para assistir</a>.<br>
       </video>
     </section>
