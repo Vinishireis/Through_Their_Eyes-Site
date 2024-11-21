@@ -188,6 +188,58 @@ p {
 }
 
 
+/*Seção de Fotos no Carrossel */
+.carousel_items {
+  display: flex;
+  flex-wrap: nowrap; /* Mantém os itens em uma única linha */
+  overflow: hidden; /* Esconde os itens fora da área visível */
+}
+
+.carousel_item {
+  position: relative;
+  min-width: 100%; /* Cada item ocupa 100% da largura do carrossel */
+  height: 80vh; /* Altura responsiva baseada na altura da viewport */
+  transition: all 0.5s ease; /* Suaviza as transições */
+  background-repeat: no-repeat;
+  background-size: cover; /* Faz a imagem preencher o item */
+  background-position: center; /* Centraliza a imagem */
+}
+
+.carousel_text {
+  position: absolute;
+  bottom: 10%; /* Posiciona o texto na parte inferior */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, 0); /* Ajusta para o centro */
+  padding: 0.5rem 1rem; /* Espaçamento interno */
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+  color: white;
+  text-shadow: 1px 1px black; /* Destaque no texto */
+  font-size: calc(1.5rem + 0.3vw); /* Tamanho dinâmico */
+  font-weight: bolder;
+}
+
+/* Itens do carrossel com imagens de fundo */
+.item1 {
+  background-image: url("https://github.com/Vinishireis/Through_Their_Eyes-Site/blob/main/Captura%20de%20tela%202024-11-20%20215135.png?raw=true");
+}
+.item2 {
+  background-image: url("https://github.com/Vinishireis/Through_Their_Eyes-Site/blob/main/Captura%20de%20tela%202024-11-20%20215352.png?raw=true");
+}
+.item3 {
+  background-image: url("https://github.com/Vinishireis/Through_Their_Eyes-Site/blob/main/Captura%20de%20tela%202024-11-20%20215417.png?raw=true");
+}
+.item4 {
+  background-image: url("https://github.com/Vinishireis/Through_Their_Eyes-Site/blob/main/Captura%20de%20tela%202024-11-20%20220020.png?raw=true");
+}
+.item5 {
+  background-image: url("https://github.com/Vinishireis/Through_Their_Eyes-Site/blob/main/Captura%20de%20tela%202024-11-20%20215328.png?raw=true");
+}
+
+
+/*Seção de Fotos Carrossel */ 
+
+
 
 /* Estilos gerais para a seção */
 #sinopse {
@@ -277,7 +329,7 @@ p {
 
 #desenvolvedores {
   padding: 50px 20px;
-  background-color: #f9f9f9;
+  background-color: white;
   text-align: center;
 }
 
